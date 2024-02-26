@@ -19,14 +19,54 @@ body {
 header {
 
 }
-
+.heading{
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+}
+.logo{
+    float: left;
+}
 nav {
     opacity: 0.5;
     background-color: black;
     border-radius: 12px;
     margin: 0rem 8rem;
+    display: flex;
+    flex-direction: column;
 }
+.nav-box{
+    display: flex;
+    justify-content: space-evenly;
+}
+main{
+    margin: 2rem 8rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 
+}
+.about-wrapper{
+    
+    float: left;
+    width: 25%;
+    height: 25%;
+    border: solid royalblue 1px;
+    border-radius: 12px;
+    padding: 1rem;
+    color: aliceblue;
+}
+.want-wrapper{
+
+    float: right;
+    width: 25%;
+    height: 25%;
+    border: solid royalblue 1px;
+    border-radius: 12px;
+    padding: 1rem;
+    color: aliceblue;
+
+}
 /* Smooth Scrolling*/
 @media (prefers-reduced-motion: no-preference) {
     html {
@@ -55,7 +95,7 @@ nav {
         text-align: center;
         cursor: pointer;
         background-color: antiquewhite;
-        color: antiquewhite;
+        color: navy;
         border: solid 1px antiquewhite;
         padding: 0.5rem;
         margin: 20px 20px;
@@ -96,8 +136,8 @@ nav {
         text-decoration: none;
         text-align: center;
         cursor: pointer;
-        background-color: black;
-        color: antiquewhite;
+        background-color: navy;
+        color: navy;
         border: solid 1px antiquewhite;
         padding: 0.5rem;
         margin: 20px 20px;
@@ -112,12 +152,12 @@ nav {
     li:hover,
     li:focus {
         background-color: antiquewhite;
-        color: black;
+        color: gainsboro;
     }
 
     .dropdown.active>.link,
     .link:hover {
-        color: black;
+        color: gainsboro;
     }
 
     .dropdown {
@@ -144,3 +184,4 @@ nav {
         transform: translateY(0);
         pointer-events: auto;
     }
+}
