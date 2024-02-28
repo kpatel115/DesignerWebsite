@@ -6,7 +6,8 @@ const User = require('./models/user.model')
 const app = express()
 
 // Middleware
-app.use(express.json())
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 // MongoDB connection
 mongoose.connect('mongodb+srv://kpatel114:pUI2UZFuji0TC2Jq@clusterswilby.kfe6ts9.mongodb.net/?retryWrites=true&w=majority&appName=clusterSwilby')
@@ -21,11 +22,26 @@ mongoose.connect('mongodb+srv://kpatel114:pUI2UZFuji0TC2Jq@clusterswilby.kfe6ts9
 app.listen(3000, () =>{
     console.log('Server is running on port 3000');
 })
+
+
+// Routes
+app.use('/api/users', user.route)
+
+
+
+
+
 // API Endpoints and Routes
 // Home Page
 app.get('/', (req,res) => {
     res.send("hello from node API Server")
 });
+
+
+
+
+
+
 // POST Users
 app.post('/api/users', async (req, res) => {
     try{
@@ -50,7 +66,7 @@ app.get('/api/users', async (req, res) => {
 })
 
 // GET Specific User
-app.get('/api/user/:id', async (req, res) => {
+app.get('/api/users/:id', async (req, res) => {
     try{
         const { id } = req.params;
         const user = await User.findById(id)
@@ -61,7 +77,7 @@ app.get('/api/user/:id', async (req, res) => {
 })
 
 // Update User API Route
-app.put('/api/user/:id', async (req, res) => {
+app.put('/api/users/:id', async (req, res) => {
     try{
         const { id } = req.params;
         const user = await User.findByIdAndUpdate(id, req.body);
@@ -79,7 +95,7 @@ app.put('/api/user/:id', async (req, res) => {
 })
 
 // Delete User API 
-app.delete('/api/user/:id', async (req, res) => {
+app.delete('/api/users/:id', async (req, res) => {
     try{
         const { id } = req.params;
         const deleteUser = await User.findByIdAndDelete(id);
