@@ -26,7 +26,7 @@ app.listen(3000, () =>{
 app.get('/', (req,res) => {
     res.send("hello from node API Server")
 });
-// Users
+// POST Users
 app.post('/api/users', async (req, res) => {
     try{
        const user =  await User.create(req.body);
@@ -39,7 +39,7 @@ app.post('/api/users', async (req, res) => {
     res.send(req.body);
 } )
 
-// 
+// GET Users
 app.get('/api/users', async (req, res) => {
     try{
         const users = await User.find({});
@@ -48,3 +48,50 @@ app.get('/api/users', async (req, res) => {
         res.status(500).json({message: error.message})
     }
 })
+
+// GET Specific User
+app.get('/api/user/:id', async (req, res) => {
+    try{
+        const { id } = req.params;
+        const user = await User.findById(id)
+        res.status(200).json(user);
+    } catch(error) {
+        res.status(500).json({message: error.message})
+    }
+})
+
+// Update User API Route
+app.put('/api/user/:id', async (req, res) => {
+    try{
+        const { id } = req.params;
+        const user = await User.findByIdAndUpdate(id, req.body);
+        // check if user exists
+        if (!user) {
+            return res.status(404).json({message: 'User not found!'});
+        }
+
+        const updatedUser = await User.findById(id);
+        res.status(200).json(updatedUser)
+
+    } catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
+
+// Delete User API 
+app.delete('/api/user/:id', async (req, res) => {
+    try{
+        const { id } = req.params;
+        const deleteUser = await User.findByIdAndDelete(id);
+
+        // check if user exists
+        if (!deleteUser) {
+            return res.status(400).json({message: "User not found!"});
+        }
+
+        res.status(200).json({message: "User successfully deleted from Database!"});
+
+    } catch(error) {
+        res.status(500).json({message: error.message})
+    }
+});
