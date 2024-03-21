@@ -5,81 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VAWN</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <script src="https://kit.fontawesome.com/369fe9d219.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!-- 
-        Nav Bar not connecting but a rounded rectangle flaoting in the center of the web page 
-        one main page that has a hd background image 
-        text boxes with titles and paragraphs one on each side left and right 
-        footer that is transparent with opacity box left (lcoation and map) middle(about us and career servcies) right (socials and contact us) 
-     -->
-    <header>
-        <!-- <nav>
-            <ul>
-                <li>Logo</li>
-                <li>Shop</li>
-                <li>Portfolio</li>
-                <li>About Us</li>
-                <li>Profile</li>
-                <li>Cart</li>
-            </ul>
-        </nav> -->
-        <nav>
-            <div class="heading">
-                <h1>VAWN</h1>
-            </div>
-            <div class="nav-box">
-                <ul class="nav-menu1">
-                    <li class="logo"><i class="fa-solid fa-cube"></i></li>
-                    <li><a href="#" class="link">Shop</a></li>
-                    <li><a href="#" class="link">Portfolio</a></li>
-                    <li><a href="#" class="link">About Us</a></li>
-                    <li><a href="#" class="link"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                    <li><a href="#" class="link"><i class="fa-regular fa-user"></i></a></li>
-                    
-                </ul>
-    
-                <ul class="nav-menu2">
-                    <li class="logo"><i class="fa-solid fa-cube"></i></li>
-                    <div class="dropdown" data-dropdown>
-                        <button class="link" data-dropdown-button><i class="fa-solid fa-bars"></i></button>
-                        <div class="dropdown-menu menu-grid">
-                            <div>
-                                <div class="dropdown-heading">Info</div>
-                                <div class="dropdown-links">
-                                    <a href="index.html" class="link">Home</a>
-                                    <a href="contact.html" class="link">Contact</a>
-    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <div class="about-wrapper">
-            <div class="about-box">
-                <h2>What we do</h2>
-                <p>We work with our clients to design and form ideas. Particularly Complete Websites and Interior Design</p>
-            </div>
-        </div>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Reservations</a></li>
+            <li><a href="#">Contact</a></li>
+            <!-- Add more navigation links as needed -->
+        </ul>
+    </nav>
 
-        <div class="want-wrapper">
-            <div class="want-box">
-                <h2>What we want</h2>
-                <p>We would like to form partnerships to mutually grow together and keep relationships</p>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Cafe Name</h1>
+        <p>Experience the best coffee and pastries in town</p>
+        <a href="#menu" class="btn">View Menu</a>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <!-- Display menu items dynamically using JavaScript or server-side rendering -->
+        <div class="menu-item">
+            <h3>Espresso</h3>
+            <p>Rich, bold, and aromatic</p>
+            <span>$2.99</span>
         </div>
-    </main>
+        <div class="menu-item">
+            <h3>Cappuccino</h3>
+            <p>Frothy and smooth</p>
+            <span>$3.49</span>
+        </div>
+        <!-- Add more menu items -->
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation">
+        <h2>Make a Reservation</h2>
+        <p>Book a table for your next visit</p>
+        <!-- Reservation form goes here -->
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Cafe Name. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>

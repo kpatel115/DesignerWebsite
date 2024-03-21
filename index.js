@@ -1,13 +1,29 @@
 const express = require('express');
 const mongoose = require('mongoose')
-const mongoDB = require('mongodb')
 
-const User = require('./models/user.model')
+const mongoDB = require('mongodb')
 const app = express()
+const User = require('./models/user.model')
+
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+
+
+app.use(express.json());
+app.use('/api', routes); // Assuming your routes are under '/api'
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
+
+
+
+
+
+
 
 // MongoDB connection
 mongoose.connect('mongodb+srv://kpatel114:pUI2UZFuji0TC2Jq@clusterswilby.kfe6ts9.mongodb.net/?retryWrites=true&w=majority&appName=clusterSwilby')
